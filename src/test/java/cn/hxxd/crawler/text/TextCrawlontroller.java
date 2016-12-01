@@ -10,7 +10,7 @@ import edu.uci.ics.crawler4j.robotstxt.RobotstxtServer;
 
 public class TextCrawlontroller {
 	public static void main(String[] args) {
-		Utils.delete(I.tInfo.T_NAME);
+		// Utils.delete(I.tInfo.T_NAME);
 		try {
 			getTextInfo();
 		} catch (Exception e) {
@@ -23,7 +23,7 @@ public class TextCrawlontroller {
 		// 抓取初始化
 		CrawlConfig config = new CrawlConfig();
 		// 中间数据储存
-		config.setCrawlStorageFolder("F:/dow/dow1");
+		config.setCrawlStorageFolder("F:/dow/dow2");
 		// 每隔一秒请求一次
 		config.setPolitenessDelay(100);
 
@@ -50,7 +50,7 @@ public class TextCrawlontroller {
 		CrawlController controller = new CrawlController(config, pageFetcher, robotstxtServer);
 
 		// 某些网站无法爬取 设置为 true
-		// controller.setCoerce(true);
+		controller.setCoerce(true);
 
 		// 添加你要爬取的url种子
 		// controller.addSeed("http://www.gov.cn/zhuanti/lkq201611kc/index.htm");
